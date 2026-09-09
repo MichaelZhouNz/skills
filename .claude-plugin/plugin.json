@@ -1,0 +1,22 @@
+{
+  "name": "mz-skills",
+  "version": "0.1.0",
+  "description": "Michael Zhou's agent skills. Currently: pr-brief, which turns a pull request into an interactive HTML brief with per-section diffs, dual-voice explanations, embedded review findings and caller analysis.",
+  "author": {
+    "name": "Michael Zhou",
+    "url": "https://github.com/MichaelZhouNz"
+  },
+  "homepage": "https://github.com/MichaelZhouNz/skills",
+  "repository": "https://github.com/MichaelZhouNz/skills",
+  "license": "MIT",
+  "keywords": [
+    "code-review",
+    "pull-request",
+    "skills",
+    "dotnet",
+    "documentation"
+  ],
+  "skills": [
+    "./skills/engineering/pr-brief"
+  ]
+}

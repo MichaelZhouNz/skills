@@ -1,0 +1,21 @@
+{
+  "name": "michaelzhounz",
+  "owner": {
+    "name": "Michael Zhou",
+    "url": "https://github.com/MichaelZhouNz"
+  },
+  "description": "Michael Zhou's agent skills, as an installable Claude Code plugin.",
+  "plugins": [
+    {
+      "name": "mz-skills",
+      "source": "./",
+      "description": "Agent skills for understanding and reviewing code changes. Currently: pr-brief.",
+      "category": "engineering",
+      "keywords": [
+        "code-review",
+        "pull-request",
+        "skills"
+      ]
+    }
+  ]
+}
