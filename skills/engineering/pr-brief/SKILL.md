@@ -162,11 +162,39 @@ At Tier 3 only, three sub-agents produce findings independently; then dedup on `
 | P2/P3 | gap, missing test, unproven assumption | `+` `sev-gap` |
 | - | deliberate conformance worth noting | `check` `sev-ok` |
 
-Every finding carries **Why** and **How**. `How` includes an example fix as a `<pre class="fix">` block when a code change is warranted; when it is not, `How` opens with **"No code change."** so the absence reads as deliberate.
+### Finding shape - current vs recommended
 
-**Example fix code must be written against the real file, not the conventional pattern.** Open the target test file or class first. Repos violate their own documented conventions - a plausible-looking snippet that names a type which does not exist is worse than no snippet.
+**A finding is a two-column code comparison, not prose.** No `Why`/`How` paragraphs.
+
+```text
+left    CURRENT       the real code, copied from the file. file:line in the header
+right   RECOMMENDED   the fix, compiling against that same file
+both    + pros and - cons as fragments, <=8 words each
+under   one `trigger` line: the input or state that exposes it
+```
+
+Two rules make this worth doing, and dropping either one turns it back into a verdict:
+
+- **Cons on RECOMMENDED are mandatory.** A fix with no stated cost is a fix nobody has thought about. Name the new dependency, the new exception, the extra call, the framework version.
+- **Pros on CURRENT are mandatory.** They are why the code was written that way. They make the finding arguable by the author instead of handed down.
+
+Titles <=12 words. Never write a paragraph anywhere in a finding.
+
+**Nothing to compare** - deploy ordering, a stale description, generated-file drift:
+
+```text
+observed   what is true now
+instead    what should be true
+```
+
+**Absence findings** - no test, no validator, no logging: the CURRENT column is `- none`, and its pros are still stated (usually "nothing to maintain", "no false failures").
+
+**Conformance findings** (`sev-ok`) keep a single `observed` line. They are not comparisons.
+
+**Code in either column must be written against the real file, not the conventional pattern.** Open the target file first. Repos violate their own documented conventions - a plausible-looking snippet naming a type that does not exist is worse than no snippet. The CURRENT column is copied, never paraphrased.
 
 ## Stage 5 - Emit the body
+
 
 Write the body fragment to a temp file. It contains content only - no `<style>`, no `<script>`, no `<html>`.
 
@@ -184,6 +212,12 @@ The template derives the section rail, the Viewed checkboxes and the scroll-spy 
       .split > .left (.lbl + .diff table) + .right (.voice x2 + .delta)
       details.foldbox > summary(.chev + .sumlbl + .counts) + .foldbody
           Review              review-list of .review.sev-*
+              each: .mark + .body > h4 + finding shape below
+              comparison   .ab > .cur(.ab-head+pre.code+ul.ablist) + .rec(same)
+                           then p.trigger > span.k + span.v
+              no code      .obs > div(span.k "observed" + span.v) x2
+              conformance  .obs with a single observed line
+              ul.ablist li carries class p (pro) or c (con) - the +/- glyph is CSS
           Callers & consumers table.callers
           Symbols in play     .symbols of .sym
   footer.note
