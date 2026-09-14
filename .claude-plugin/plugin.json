@@ -1,7 +1,7 @@
 {
   "name": "mz-skills",
-  "version": "0.1.0",
-  "description": "Michael Zhou's agent skills. Currently: pr-brief, which turns a pull request into an interactive HTML brief with per-section diffs, dual-voice explanations, embedded review findings and caller analysis.",
+  "version": "0.2.0",
+  "description": "Michael Zhou's agent skills: pr-brief (interactive HTML PR brief with diffs, dual-voice explanations, review findings and caller analysis) and generate-pr-description (mandatory four-section PR body, enforced by a PreToolUse hook on gh pr create).",
   "author": {
     "name": "Michael Zhou",
     "url": "https://github.com/MichaelZhouNz"
@@ -17,6 +17,8 @@
     "documentation"
   ],
   "skills": [
-    "./skills/engineering/pr-brief"
-  ]
+    "./skills/engineering/pr-brief",
+    "./skills/engineering/generate-pr-description"
+  ],
+  "hooks": "./hooks/hooks.json"
 }

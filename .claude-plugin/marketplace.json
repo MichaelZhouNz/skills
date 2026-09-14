@@ -9,7 +9,7 @@
     {
       "name": "mz-skills",
       "source": "./",
-      "description": "Agent skills for understanding and reviewing code changes. Currently: pr-brief.",
+      "description": "Agent skills for understanding, reviewing and describing code changes. Currently: pr-brief, generate-pr-description.",
       "category": "engineering",
       "keywords": [
         "code-review",
