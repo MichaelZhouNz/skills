@@ -9,10 +9,12 @@
     {
       "name": "mz-skills",
       "source": "./",
-      "description": "Agent skills for understanding, reviewing and describing code changes. Currently: pr-brief, generate-pr-description.",
+      "description": "Agent skills for understanding, reviewing and describing code changes, and for designing phone-app screens in one house style. Currently: pr-brief, generate-pr-description, warm-mobile-design.",
       "category": "engineering",
       "keywords": [
         "code-review",
+        "design",
+        "mobile-ui",
         "pull-request",
         "skills"
       ]
