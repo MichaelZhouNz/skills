@@ -1,6 +1,6 @@
 # skills
 
-Agent skills for understanding, reviewing and describing code changes.
+Agent skills for understanding, reviewing and describing code changes, and for designing phone-app screens in one house style.
 
 ## Install
 
@@ -79,6 +79,23 @@ Installed as a plugin, the hook is registered automatically. To use the hook sta
 }
 ```
 
+### `warm-mobile-design`
+
+The house style for phone-app screens, as a skill: warm cream and deep green, Figtree, Phosphor icons, bold titles, one helper line, one main button, an even 20/16/24/8 spacing rhythm, short addresses, full-width sheets, maps that look like maps, and the 15-second rule on every screen. It came out of the Dream House Hunt v2 design and a review of its 130 screens.
+
+Use it when designing, redesigning or reviewing a mobile screen, an onboarding or intro flow, a sheet, an empty state or a settings page, on a Claude Design canvas or in React Native.
+
+**What's in it**
+
+- `SKILL.md`: the taste in five judgments, the order of work for a new screen, the recurring moves, how to present options under originals on a canvas, and the pitfalls seen in the wild.
+- `references/tokens.md`: every colour (light and dark), the Figtree type scale, spacing, radii, sizes and the fit-ring geometry.
+- `references/components.md`: the catalogue with exact sizes (chrome, buttons, cards, rows, sheets, chips, badges, maps, the mark).
+- `references/patterns.md`: whole-screen recipes (onboarding step, intro page, tab screen, pushed screen, sheet, empty state, detail page, forms, field screens, compare, dark twins).
+- `references/words.md`: the voice, the agreed vocabulary, sample-data rules, and the three-language workflow.
+- `references/review.md`: how to review screens (yardsticks, measuring screenshots, verdicts, stickies, canvas layout).
+- `assets/base.css` (the classes behind the components, light and dark), `assets/mark.svg` (the house-with-a-heart mark), `assets/map-art.svg` (the stylised map).
+- `evals/`: three test prompts in the `claude plugin eval` layout.
+
 ## Layout
 
 ```
@@ -93,6 +110,12 @@ skills/
     │   └── render.mjs      splices a body fragment into the template
     └── generate-pr-description/
         └── SKILL.md        template + procedure for the four-section PR body
+└── design/
+    └── warm-mobile-design/
+        ├── SKILL.md        the taste, the order of work, the recurring moves
+        ├── references/     tokens, components, patterns, words, review
+        ├── assets/         base.css, mark.svg, map-art.svg
+        └── evals/          three test prompts
 ```
 
 ## Licence

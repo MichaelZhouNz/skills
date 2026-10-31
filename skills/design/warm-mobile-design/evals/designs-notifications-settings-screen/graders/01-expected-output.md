@@ -1,0 +1,7 @@
+---
+type: llm
+focus: trace
+weight: 1
+---
+
+The result matches this description: notifications-screen.md describes a pushed screen with a plain title, one helper line, controls as rows or a card (a 52 pt pinned Save button or none if changes save on tap, never a floating button), toggles 51x31, rows 56 tall, 20 pt padding, 24 between sections, exact warm tokens (cream page, deep green accents), short friendly words with no exclamation marks, and a dark-mode note that uses the dark token set.

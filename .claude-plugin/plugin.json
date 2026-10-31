@@ -1,7 +1,7 @@
 {
   "name": "mz-skills",
-  "version": "0.2.0",
-  "description": "Michael Zhou's agent skills: pr-brief (interactive HTML PR brief with diffs, dual-voice explanations, review findings and caller analysis) and generate-pr-description (mandatory four-section PR body, enforced by a PreToolUse hook on gh pr create).",
+  "version": "0.3.0",
+  "description": "Michael Zhou's agent skills: pr-brief (interactive HTML PR brief with diffs, dual-voice explanations, review findings and caller analysis), generate-pr-description (mandatory four-section PR body, enforced by a PreToolUse hook on gh pr create) and warm-mobile-design (the house style for phone-app screens: tokens, components, screen patterns, words and the 15-second review method).",
   "author": {
     "name": "Michael Zhou",
     "url": "https://github.com/MichaelZhouNz"
@@ -11,14 +11,19 @@
   "license": "MIT",
   "keywords": [
     "code-review",
+    "design",
+    "design-review",
+    "documentation",
+    "dotnet",
+    "mobile",
     "pull-request",
     "skills",
-    "dotnet",
-    "documentation"
+    "ui"
   ],
   "skills": [
     "./skills/engineering/pr-brief",
-    "./skills/engineering/generate-pr-description"
+    "./skills/engineering/generate-pr-description",
+    "./skills/design/warm-mobile-design"
   ],
   "hooks": "./hooks/hooks.json"
 }
